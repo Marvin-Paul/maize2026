@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFF0A0E12), Color(0xFF151B23)],
+            colors: [Color(0xFFF5F7FA), Color(0xFFFFFFFF)],
           ),
         ),
         child: SafeArea(
@@ -63,21 +63,38 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  String _getGreeting() {
+    final hour = DateTime.now().hour;
+    if (hour < 12) {
+      return 'Good morning,';
+    } else if (hour < 17) {
+      return 'Good afternoon,';
+    } else {
+      return 'Good evening,';
+    }
+  }
+
   Widget _buildHeader(BuildContext context) {
+    final auth = Provider.of<AuthProvider>(context);
+    final username = auth.username ?? 'Farmer';
+    final displayName = username.isNotEmpty 
+        ? 'Farmer ${username[0].toUpperCase()}${username.substring(1)}' 
+        : 'Farmer';
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Good morning,',
-              style: TextStyle(color: Colors.white70, fontSize: 16),
+              _getGreeting(),
+              style: const TextStyle(color: Colors.black87, fontSize: 16),
             ),
             Text(
-              'Farmer John',
-              style: TextStyle(
-                color: Colors.white,
+              displayName,
+              style: const TextStyle(
+                color: Colors.black,
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
@@ -87,7 +104,7 @@ class HomeScreen extends StatelessWidget {
         IconButton(
           onPressed: () =>
               Provider.of<AuthProvider>(context, listen: false).logout(),
-          icon: const Icon(Icons.logout, color: Colors.white70),
+          icon: const Icon(Icons.logout, color: Colors.black87),
         ),
       ],
     );
@@ -119,24 +136,24 @@ class HomeScreen extends StatelessWidget {
             children: [
               Text(
                 'Current Weather',
-                style: TextStyle(color: Colors.white70, fontSize: 14),
+                style: TextStyle(color: Colors.black87, fontSize: 14),
               ),
               SizedBox(height: 4),
               Text(
                 '24°C',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 'Partly Cloudy',
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: TextStyle(color: Colors.black, fontSize: 16),
               ),
             ],
           ),
-          Icon(Icons.wb_cloudy_outlined, size: 60, color: Colors.white),
+          Icon(Icons.wb_cloudy_outlined, size: 60, color: Colors.black),
         ],
       ),
     );
@@ -155,11 +172,11 @@ class HomeScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           image: const DecorationImage(
             image: NetworkImage(
-                'https://images.unsplash.com/photo-1551327151-6435c2494191?auto=format&fit=crop&q=80'),
+                'https://picsum.photos/seed/maize/400/200'),
             fit: BoxFit.cover,
             opacity: 0.4,
           ),
-          color: Colors.black,
+          color: Colors.white,
           border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
         ),
         child: Center(
@@ -173,20 +190,20 @@ class HomeScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child:
-                    const Icon(Icons.camera_alt, size: 32, color: Colors.white),
+                    const Icon(Icons.camera_alt, size: 32, color: Colors.black),
               ),
               const SizedBox(height: 12),
               const Text(
                 'Identify Disease',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const Text(
                 'Snap a photo of your maize leaf',
-                style: TextStyle(color: Colors.white70),
+                style: TextStyle(color: Colors.black87),
               ),
             ],
           ),
@@ -202,7 +219,7 @@ class HomeScreen extends StatelessWidget {
         Text(
           title,
           style: const TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -245,14 +262,14 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   disease,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
                 ),
                 Text(time,
                     style:
-                        const TextStyle(color: Colors.white54, fontSize: 12)),
+                        const TextStyle(color: Colors.black54, fontSize: 12)),
               ],
             ),
           ),
@@ -268,7 +285,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const Text('Confidence',
-                  style: TextStyle(color: Colors.white54, fontSize: 10)),
+                  style: TextStyle(color: Colors.black54, fontSize: 10)),
             ],
           ),
         ],

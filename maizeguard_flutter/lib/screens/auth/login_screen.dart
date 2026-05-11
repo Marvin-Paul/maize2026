@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Color(0xFF0A0E12), Color(0xFF1B2D1B)],
+            colors: [Color(0xFFF5F7FA), Color(0xFFE8F5E9)],
           ),
         ),
         child: Center(
@@ -57,12 +57,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 const Text(
                   'Intelligent Crop Protection',
-                  style: TextStyle(color: Colors.white70, fontSize: 16),
+                  style: TextStyle(color: Colors.black87, fontSize: 16),
                 ),
                 const SizedBox(height: 40),
                 Container(
@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                           hintText: 'Username',
                           filled: true,
-                          fillColor: Colors.black26,
+                          fillColor: Colors.grey.shade200,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide.none,
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                           hintText: 'Password',
                           filled: true,
-                          fillColor: Colors.black26,
+                          fillColor: Colors.grey.shade200,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide.none,
@@ -112,13 +112,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               onPressed: auth.isLoading ? null : _handleLogin,
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xFF2E7D32),
-                                foregroundColor: Colors.white,
+                                foregroundColor: Colors.black,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                               child: auth.isLoading
-                                  ? const CircularProgressIndicator(color: Colors.white)
+                                  ? const CircularProgressIndicator(color: Colors.black)
                                   : const Text('Login', style: TextStyle(fontSize: 18)),
                             ),
                           );

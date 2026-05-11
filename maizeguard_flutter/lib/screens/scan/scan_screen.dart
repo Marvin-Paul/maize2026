@@ -74,7 +74,7 @@ class _ScanScreenState extends State<ScanScreen> {
           const SizedBox(height: 16),
           const Text(
             'Quick Guide',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           const SizedBox(height: 16),
           _buildGuideItem(Icons.wb_sunny_outlined, 'Ensure good natural lighting'),
@@ -90,9 +90,9 @@ class _ScanScreenState extends State<ScanScreen> {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         children: [
-          Icon(icon, size: 20, color: Colors.white70),
+          Icon(icon, size: 20, color: Colors.black87),
           const SizedBox(width: 12),
-          Text(text, style: const TextStyle(color: Colors.white70)),
+          Text(text, style: const TextStyle(color: Colors.black87)),
         ],
       ),
     );
@@ -110,7 +110,7 @@ class _ScanScreenState extends State<ScanScreen> {
             label: const Text('Use Camera', style: TextStyle(fontSize: 18)),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF2E7D32),
-              foregroundColor: Colors.white,
+              foregroundColor: Colors.black,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             ),
           ),
@@ -124,8 +124,8 @@ class _ScanScreenState extends State<ScanScreen> {
             icon: const Icon(Icons.photo_library),
             label: const Text('Pick from Gallery', style: TextStyle(fontSize: 18)),
             style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
-              side: const BorderSide(color: Colors.white24),
+              foregroundColor: Colors.black,
+              side: const BorderSide(color: Colors.black12),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             ),
           ),

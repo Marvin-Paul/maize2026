@@ -52,7 +52,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   Widget _buildLoadingState() {
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(color: Color(0xFF0A0E12)),
+      decoration: const BoxDecoration(color: Color(0xFFF5F7FA)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -61,12 +61,12 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
           const Text(
             'Initiating Neural Scan',
             style: TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           const SizedBox(height: 12),
           const Text(
             'Analyzing leaf patterns and texture...',
-            style: TextStyle(color: Colors.white70),
+            style: TextStyle(color: Colors.black87),
           ),
           const SizedBox(height: 40),
           _buildLoadingStep('Extracting features', true),
@@ -84,14 +84,14 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
         children: [
           Icon(
             active ? Icons.check_circle : Icons.radio_button_unchecked,
-            color: active ? const Color(0xFF81C784) : Colors.white24,
+            color: active ? const Color(0xFF81C784) : Colors.black12,
             size: 20,
           ),
           const SizedBox(width: 16),
           Text(
             text,
             style: TextStyle(
-              color: active ? Colors.white : Colors.white38,
+              color: active ? Colors.black : Colors.white38,
               fontSize: 16,
             ),
           ),
@@ -120,7 +120,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                   Provider.of<ScanProvider>(context, listen: false).imageBytes!,
                   fit: BoxFit.cover,
                 )
-              : Container(color: Colors.black),
+              : Container(color: Colors.white),
           ),
         ),
         SliverToBoxAdapter(
@@ -147,7 +147,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                     onPressed: () => Navigator.of(context).pop(),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF2E7D32),
-                      foregroundColor: Colors.white,
+                      foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12)),
                     ),
@@ -203,7 +203,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                 style: const TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                    color: Colors.black),
               ),
             ],
           ),
@@ -219,7 +219,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                   color: statusColor),
             ),
             const Text('CONFIDENCE',
-                style: TextStyle(color: Colors.white54, fontSize: 10)),
+                style: TextStyle(color: Colors.black54, fontSize: 10)),
           ],
         ),
       ],
@@ -230,7 +230,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
     return Text(
       title,
       style: const TextStyle(
-          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
     );
   }
 
@@ -250,7 +250,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(color: Colors.white70, fontSize: 16),
+              style: const TextStyle(color: Colors.black87, fontSize: 16),
             ),
           ),
         ],

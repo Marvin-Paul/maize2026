@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Color(0xFF0A0E12), Color(0xFF1B2D1B)],
+            colors: [Color(0xFFF5F7FA), Color(0xFFE8F5E9)],
           ),
         ),
         child: Center(
@@ -56,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -74,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                           hintText: 'Username',
                           filled: true,
-                          fillColor: Colors.black26,
+                          fillColor: Colors.grey.shade200,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide.none,
@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                           hintText: 'Password',
                           filled: true,
-                          fillColor: Colors.black26,
+                          fillColor: Colors.grey.shade200,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide.none,
@@ -107,13 +107,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               onPressed: auth.isLoading ? null : _handleRegister,
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xFF2E7D32),
-                                foregroundColor: Colors.white,
+                                foregroundColor: Colors.black,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                               child: auth.isLoading
-                                  ? const CircularProgressIndicator(color: Colors.white)
+                                  ? const CircularProgressIndicator(color: Colors.black)
                                   : const Text('Register', style: TextStyle(fontSize: 18)),
                             ),
                           );

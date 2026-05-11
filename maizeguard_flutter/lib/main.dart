@@ -27,15 +27,15 @@ class MaizeGuardApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primaryColor: const Color(0xFF2E7D32),
-        scaffoldBackgroundColor: const Color(0xFF0A0E12),
+        scaffoldBackgroundColor: const Color(0xFFF5F7FA),
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF2E7D32),
-          brightness: Brightness.dark,
-          surface: const Color(0xFF151B23),
+          brightness: Brightness.light,
+          surface: const Color(0xFFFFFFFF),
         ),
-        textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
+        textTheme: GoogleFonts.outfitTextTheme(ThemeData.light().textTheme),
       ),
       home: const LoginScreen(),
     );

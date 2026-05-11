@@ -33,7 +33,7 @@ class ScanProvider with ChangeNotifier {
     notifyListeners();
 
     try {
-      final model = GenerativeModel(model: 'gemini-1.5-flash-latest', apiKey: _apiKey);
+      final model = GenerativeModel(model: 'gemini-1.5-flash', apiKey: _apiKey);
       
       final content = [
         Content.multi([

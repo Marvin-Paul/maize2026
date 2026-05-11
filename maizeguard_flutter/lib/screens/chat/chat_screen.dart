@@ -27,7 +27,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    _model = GenerativeModel(model: 'gemini-1.5-flash-latest', apiKey: _apiKey);
+    _model = GenerativeModel(model: 'gemini-1.5-flash', apiKey: _apiKey);
     _chat = _model.startChat(history: [
       Content.model([TextPart("Hello! I'm your MaizeGuard AI assistant. How can I help you with your maize crop today?")])
     ]);
@@ -99,7 +99,7 @@ class _ChatScreenState extends State<ChatScreen> {
               padding: EdgeInsets.only(left: 20, bottom: 10),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Text('AI is thinking...', style: TextStyle(color: Colors.white54, fontSize: 12)),
+                child: Text('AI is thinking...', style: TextStyle(color: Colors.black54, fontSize: 12)),
               ),
             ),
           _buildInputArea(),
@@ -126,7 +126,7 @@ class _ChatScreenState extends State<ChatScreen> {
         child: MarkdownBody(
           data: content,
           styleSheet: MarkdownStyleSheet(
-            p: TextStyle(color: isUser ? Colors.white : Colors.white70, fontSize: 16),
+            p: TextStyle(color: isUser ? Colors.black : Colors.black87, fontSize: 16),
           ),
         ),
       ),
@@ -137,7 +137,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF151B23),
+        color: const Color(0xFFFFFFFF),
         border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Row(
@@ -145,12 +145,12 @@ class _ChatScreenState extends State<ChatScreen> {
           Expanded(
             child: TextField(
               controller: _messageController,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.black),
               decoration: InputDecoration(
                 hintText: 'Ask about planting, diseases...',
-                hintStyle: const TextStyle(color: Colors.white30),
+                hintStyle: const TextStyle(color: Colors.black38),
                 filled: true,
-                fillColor: Colors.black26,
+                fillColor: Colors.grey.shade200,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
                   borderSide: BorderSide.none,
@@ -169,7 +169,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 color: Color(0xFF2E7D32),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.send, color: Colors.white, size: 20),
+              child: const Icon(Icons.send, color: Colors.black, size: 20),
             ),
           ),
         ],
