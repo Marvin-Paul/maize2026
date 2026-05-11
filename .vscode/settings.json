@@ -1,0 +1,8 @@
+{
+  "dart.flutterSdkPath": "",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "git.ignoreLimitWarning": true
+}

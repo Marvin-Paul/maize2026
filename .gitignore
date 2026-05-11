@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.venv/
+venv/
+env/
+
+# Trained model (large binary - do not commit)
+models/
+*.h5
+*.keras
+
+# User uploads (privacy - do not commit)
+static/uploads/
+
+# Dataset (too large for git)
+dataset/
+
+# Flask / OS
+instance/
+.webassets-cache
+.DS_Store
+Thumbs.db
+dataset_organized/
+
