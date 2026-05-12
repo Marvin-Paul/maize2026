@@ -43,10 +43,18 @@ class AuthProvider with ChangeNotifier {
   }
 
   Future<void> tryAutoLogin() async {
-    final prefs = await SharedPreferences.getInstance();
-    if (prefs.containsKey('username')) {
-      _username = prefs.getString('username');
-      notifyListeners();
+    debugPrint('Attempting auto-login...');
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      if (prefs.containsKey('username')) {
+        _username = prefs.getString('username');
+        debugPrint('Auto-login successful for user: $_username');
+        notifyListeners();
+      } else {
+        debugPrint('No saved session found for auto-login.');
+      }
+    } catch (e) {
+      debugPrint('Error during auto-login: $e');
     }
   }
 }

@@ -28,6 +28,7 @@ dependencies:
   sqflite: ^2.3.0
   weather: any
   flutter_markdown: ^0.6.18+2
+  sqflite_common_ffi: ^2.4.0+3
 
 dev_dependencies:
   flutter_test:
